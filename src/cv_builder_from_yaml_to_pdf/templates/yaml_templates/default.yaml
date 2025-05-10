@@ -1,0 +1,83 @@
+
+# Default CV template
+personal_info:
+  name: Jane Doe
+  email: jane.doe@example.com
+  phone: "+1 (123) 456-7890"
+  location: "New York, NY"
+  website: "https://janedoe.com"
+  linkedin: "https://linkedin.com/in/janedoe"
+  github: "https://github.com/janedoe"
+  title: "Senior Software Engineer"
+  summary: "Experienced software engineer with 6+ years of experience in full-stack development. Passionate about creating efficient, scalable solutions using modern technologies."
+
+education:
+  - institution: University of Technology
+    degree: Master of Science in Computer Science
+    start_date: "Sep 2015"
+    end_date: "Jun 2017"
+    location: "Boston, MA"
+    details: "Focus on Machine Learning and Data Structures"
+    gpa: "3.8/4.0"
+  
+  - institution: State University
+    degree: Bachelor of Science in Software Engineering
+    start_date: "Sep 2011"
+    end_date: "Jun 2015"
+    location: "San Francisco, CA"
+    details: "Computer Science Student Association President"
+    gpa: "3.7/4.0"
+
+experience:
+  - company: Tech Innovations Inc.
+    title: Senior Software Engineer
+    start_date: "Jul 2019"
+    end_date: "Present"
+    location: "New York, NY"
+    description: "Leading a team of 5 engineers in developing and maintaining enterprise web applications."
+    achievements:
+      - "Redesigned authentication system, reducing login failures by 35%"
+      - "Optimized database queries, improving application performance by 40%"
+      - "Implemented CI/CD pipeline, reducing deployment time from 2 hours to 15 minutes"
+      - "Mentored 3 junior developers, helping them advance to mid-level positions"
+  
+  - company: Web Solutions LLC
+    title: Software Developer
+    start_date: "Aug 2017"
+    end_date: "Jun 2019"
+    location: "Chicago, IL"
+    description: "Developed and maintained multiple client-facing web applications."
+    achievements:
+      - "Built responsive web interfaces using React and Vue.js"
+      - "Developed RESTful APIs using Node.js and Express"
+      - "Implemented automated testing, increasing code coverage from 60% to 85%"
+
+skills:
+  - category: Programming Languages
+    name: "Python, JavaScript, TypeScript, Java, SQL"
+  - category: Frameworks & Libraries
+    name: "React, Angular, Vue.js, Node.js, Express, Django, Flask"
+  - category: Tools & Technologies
+    name: "Git, Docker, Kubernetes, AWS, CI/CD, MongoDB, PostgreSQL"
+  - category: Soft Skills
+    name: "Team Leadership, Mentoring, Technical Writing, Agile Methodologies"
+
+projects:
+  - name: Personal Portfolio Website
+    url: "https://janedoe.com"
+    date: "2023"
+    description: "Designed and developed a personal portfolio website to showcase projects and skills."
+    technologies:
+      - "React"
+      - "Next.js"
+      - "Tailwind CSS"
+  
+  - name: Task Management Application
+    url: "https://github.com/janedoe/taskmanager"
+    date: "2022"
+    description: "A full-stack task management application with user authentication and real-time updates."
+    technologies:
+      - "Vue.js"
+      - "Express"
+      - "MongoDB"
+      - "Socket.io"

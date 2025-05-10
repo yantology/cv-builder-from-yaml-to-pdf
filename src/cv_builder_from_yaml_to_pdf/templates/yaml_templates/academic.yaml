@@ -1,0 +1,106 @@
+
+# filepath: c:\\Users\\LENOVO\\Documents\\python\\yaml-to-pdf\\cv-builder-from-yaml-to-pdf-2\\src\\cv_builder_from_yaml_to_pdf\\templates\\yaml_templates\\academic.yaml
+personal_info:
+  name: Dr. Jane Doe
+  email: jane.doe@university.edu
+  phone: "+1 (123) 456-7890"
+  location: "Cambridge, MA"
+  website: "https://janedoe.academia.edu"
+  orcid: "0000-0001-2345-6789"
+  researchgate: "https://www.researchgate.net/profile/Jane-Doe"
+  summary: "Assistant Professor of Computer Science with expertise in Artificial Intelligence and Machine Learning. Published over 15 peer-reviewed papers focusing on neural networks and deep learning applications."
+
+education:
+  - institution: MIT
+    degree: Ph.D. in Computer Science
+    start_date: "Sep 2015"
+    end_date: "Jun 2020"
+    location: "Cambridge, MA"
+    details: "Dissertation: 'Deep Learning Applications in Natural Language Processing', Advisor: Prof. John Smith"
+  
+  - institution: Stanford University
+    degree: Master of Science in Computer Science
+    start_date: "Sep 2013"
+    end_date: "Jun 2015"
+    location: "Stanford, CA"
+    details: "GPA: 4.0/4.0, Focus on Artificial Intelligence and Machine Learning"
+  
+  - institution: Harvard University
+    degree: Bachelor of Science in Computer Science
+    start_date: "Sep 2009"
+    end_date: "Jun 2013"
+    location: "Cambridge, MA"
+    details: "Summa Cum Laude, Phi Beta Kappa"
+
+experience:
+  - company: University of Technology
+    title: Assistant Professor
+    start_date: "Jul 2020"
+    end_date: "Present"
+    location: "Boston, MA"
+    description: "Teaching undergraduate and graduate courses in Artificial Intelligence and Machine Learning."
+    achievements:
+      - "Established a new research lab focused on deep learning applications"
+      - "Secured $500,000 in research grants from NSF and industry partners"
+      - "Mentored 5 Ph.D. students and 8 Master's students"
+      - "Developed a new graduate course on 'Advanced Deep Learning Techniques'"
+  
+  - company: Tech Research Institute
+    title: Research Scientist
+    start_date: "Aug 2018"
+    end_date: "Jun 2020"
+    location: "San Francisco, CA"
+    description: "Led research projects on natural language processing applications."
+    achievements:
+      - "Published 4 papers in top-tier conferences (NeurIPS, ICML)"
+      - "Developed a novel transformer architecture for language understanding"
+      - "Collaborated with industry partners on applying research to real-world problems"
+
+publications:
+  - title: "Advances in Transformer Architectures for NLP"
+    authors: "Doe, J., Smith, A., & Johnson, B."
+    journal: "Transactions on Machine Learning Research"
+    year: "2022"
+    volume: "14"
+    pages: "2345-2360"
+    doi: "10.1109/TMLR.2022.123456"
+  
+  - title: "Self-Supervised Learning for Text Classification"
+    authors: "Doe, J., & Williams, C."
+    conference: "International Conference on Machine Learning (ICML)"
+    year: "2021"
+    pages: "1234-1242"
+    doi: "10.1145/3456.7890"
+  
+  - title: "Efficient Transformer Models for Resource-Constrained Devices"
+    authors: "Doe, J., Brown, D., & Miller, E."
+    conference: "Neural Information Processing Systems (NeurIPS)"
+    year: "2020"
+    pages: "5678-5686"
+    doi: "10.1109/NeurIPS.2020.654321"
+
+teaching:
+  - course: "CS 401: Introduction to Artificial Intelligence"
+    institution: "University of Technology"
+    academic_years: "2020-2022"
+    level: "Undergraduate"
+  
+  - course: "CS 601: Advanced Machine Learning"
+    institution: "University of Technology"
+    academic_years: "2021-2022"
+    level: "Graduate"
+  
+  - course: "CS 701: Deep Learning"
+    institution: "University of Technology"
+    academic_years: "2020-2022"
+    level: "Graduate"
+
+skills:
+  - category: Programming Languages
+    name: "Python, R, Julia"
+  - category: Machine Learning Frameworks
+    name: "PyTorch, TensorFlow, scikit-learn"
+  - category: Data Analysis
+    name: "NumPy, Pandas, Matplotlib, SciPy"
+  - category: Languages
+    name: "English (Native), French (Proficient), Spanish (Basic)"

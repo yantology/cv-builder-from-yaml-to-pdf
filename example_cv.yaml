@@ -1,0 +1,115 @@
+personal_info:
+  name: Jane Doe
+  email: jane.doe@example.com
+  phone: "+1 (123) 456-7890"
+  location: "New York, NY"
+  website: "https://janedoe.com"
+  linkedin: "https://linkedin.com/in/janedoe"
+  github: "https://github.com/janedoe"
+  summary: "Experienced software engineer with 6+ years of experience in full-stack development. Passionate about creating efficient, scalable solutions using modern technologies."
+  title: "Senior Software Engineer"
+
+education:
+  - institution: University of Technology
+    degree: Master of Science in Computer Science
+    start_date: "Sep 2015"
+    end_date: "Jun 2017"
+    location: "Boston, MA"
+    details: "Focus on Machine Learning and Data Structures"
+    gpa: "3.8/4.0"
+  
+  - institution: State University
+    degree: Bachelor of Science in Software Engineering
+    start_date: "Sep 2011"
+    end_date: "Jun 2015"
+    location: "San Francisco, CA"
+    details: "Computer Science Student Association President"
+    gpa: "3.7/4.0"
+
+experience:
+  - company: Tech Innovations Inc.
+    title: Senior Software Engineer
+    start_date: "Jul 2019"
+    end_date: "Present"
+    location: "New York, NY"
+    description: "Leading a team of 5 engineers in developing and maintaining enterprise web applications."
+    achievements:
+      - "Redesigned authentication system, reducing login failures by 35%"
+      - "Optimized database queries, improving application performance by 40%"
+      - "Implemented CI/CD pipeline, reducing deployment time from 2 hours to 15 minutes"
+      - "Mentored 3 junior developers, helping them advance to mid-level positions"
+  
+  - company: Web Solutions LLC
+    title: Software Developer
+    start_date: "Aug 2017"
+    end_date: "Jun 2019"
+    location: "Chicago, IL"
+    description: "Developed and maintained multiple client-facing web applications."
+    achievements:
+      - "Built responsive web interfaces using React and Vue.js"
+      - "Developed RESTful APIs using Node.js and Express"
+      - "Implemented automated testing, increasing code coverage from 60% to 85%"
+
+skills:
+  - category: "Programming Languages"
+    name: "Python, JavaScript, TypeScript, Java, SQL"
+  - category: "Frameworks & Libraries"
+    name: "React, Angular, Vue.js, Node.js, Express, Django, Flask"
+  - category: "Tools & Technologies"
+    name: "Git, Docker, Kubernetes, AWS, CI/CD, MongoDB, PostgreSQL"
+  - category: "Soft Skills"
+    name: "Team Leadership, Mentoring, Technical Writing, Agile Methodologies"
+  - category: "Soft Skills"
+    name: "Team Leadership, Mentoring, Technical Writing, Agile Methodologies"
+
+projects:
+  - name: Personal Portfolio Website
+    description: "Designed and developed a personal portfolio website to showcase projects and skills."
+    technologies:
+      - "React"
+      - "Next.js"
+      - "Tailwind CSS"
+    link: "https://janedoe.com"
+    start_date: "2023-01"
+    end_date: "2023-03"
+  
+  - name: Task Management Application
+    description: "A full-stack task management application with user authentication and real-time updates."
+    technologies:
+      - "Vue.js"
+      - "Express"
+      - "MongoDB"
+      - "Socket.io"
+    link: "https://github.com/janedoe/taskmanager"
+    start_date: "2022-06"
+    end_date: "2022-12"
+    achievements:
+      - "Implemented real-time collaboration features"
+      - "Reduced page load time by 40%"
+
+certifications:
+  - name: "AWS Certified Solutions Architect"
+    issuer: "Amazon Web Services"
+    date: "2022-05"
+    description: "Professional certification for designing distributed systems on AWS"
+    link: "https://aws.amazon.com/certification/certified-solutions-architect-associate/"
+  
+  - name: "Certified Scrum Master"
+    issuer: "Scrum Alliance"
+    date: "2021-11"
+    description: "Certification for Agile project management methodologies"
+
+languages:
+  - name: "English"
+    proficiency: "Native"
+  - name: "Spanish"
+    proficiency: "Intermediate"
+  - name: "French"
+    proficiency: "Basic"
+
+references:
+  - name: "John Smith"
+    position: "CTO"
+    company: "Tech Innovations Inc."
+    contact: "Available upon request"
+    relation: "Direct manager for 3 years"
