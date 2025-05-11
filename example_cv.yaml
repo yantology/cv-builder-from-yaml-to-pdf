@@ -17,7 +17,7 @@ education:
     location: "Boston, MA"
     details: "Focus on Machine Learning and Data Structures"
     gpa: "3.8/4.0"
-  
+
   - institution: State University
     degree: Bachelor of Science in Software Engineering
     start_date: "Sep 2011"
@@ -38,7 +38,7 @@ experience:
       - "Optimized database queries, improving application performance by 40%"
       - "Implemented CI/CD pipeline, reducing deployment time from 2 hours to 15 minutes"
       - "Mentored 3 junior developers, helping them advance to mid-level positions"
-  
+
   - company: Web Solutions LLC
     title: Software Developer
     start_date: "Aug 2017"
@@ -72,7 +72,7 @@ projects:
     link: "https://janedoe.com"
     start_date: "2023-01"
     end_date: "2023-03"
-  
+
   - name: Task Management Application
     description: "A full-stack task management application with user authentication and real-time updates."
     technologies:
@@ -93,7 +93,7 @@ certifications:
     date: "2022-05"
     description: "Professional certification for designing distributed systems on AWS"
     link: "https://aws.amazon.com/certification/certified-solutions-architect-associate/"
-  
+
   - name: "Certified Scrum Master"
     issuer: "Scrum Alliance"
     date: "2021-11"
