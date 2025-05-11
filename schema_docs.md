@@ -34,7 +34,6 @@ This document describes the schema for the CV data used by CV Builder.
 
 ### custom_sections
 
-
 ## Model Definitions
 
 ### Certificate
@@ -136,4 +135,3 @@ Model for skills section.
 |----------|------|----------|-------------|
 | category | string | Yes |  |
 | name | string | Yes |  |
-
