@@ -20,7 +20,7 @@ def get_style(style_name: str) -> CVStyle:
     styles = {
         'modern': ModernStyle,
         'classic': ClassicStyle,
-        'minimal': MinimalStyle
+        'minimal': MinimalStyle,
     }
     
     if style_name.lower() not in styles:

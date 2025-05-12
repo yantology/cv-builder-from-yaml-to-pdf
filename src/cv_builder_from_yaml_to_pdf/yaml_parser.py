@@ -5,8 +5,8 @@ This module handles the parsing of YAML files containing CV data.
 
 import yaml
 from pathlib import Path
-from typing import Dict, Any, Optional, Union, List
-from pydantic import ValidationError, TypeAdapter
+from typing import Dict, Any, Union, List
+from pydantic import ValidationError
 
 from cv_builder_from_yaml_to_pdf.models import CV
 
@@ -56,18 +56,6 @@ def validate_cv_string(yaml_string: str) -> Union[bool, List[str]]:
         return [f"YAML parsing error: {e}"]
 
 
-def validate_cv_dict(data: Dict[str, Any]) -> Union[bool, List[str]]:
-    """Validates a CV from a dictionary.
-    
-    Args:
-        data: Dictionary containing CV data
-        
-    Returns:
-        True if valid, or a list of validation errors
-    """
-    return validate_cv_data(data)
-
-
 def validate_cv_data(data: Dict[str, Any]) -> Union[bool, List[str]]:
     """Validates that the CV data is properly structured using Pydantic models.
     
@@ -82,13 +70,3 @@ def validate_cv_data(data: Dict[str, Any]) -> Union[bool, List[str]]:
         return True
     except ValidationError as e:
         return [f"{err['loc']}: {err['msg']}" for err in e.errors()]
-    
-    # Check if personal_info contains the required fields
-    personal_info = data.get('personal_info', {})
-    required_personal_fields = ['name', 'email']
-    
-    for field in required_personal_fields:
-        if field not in personal_info:
-            return False
-    
-    return True

@@ -13,7 +13,7 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import cm
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, ListFlowable, ListItem
 
-from cv_builder_from_yaml_to_pdf.models import CV, PersonalInfo, Education, Experience, Project, Skill
+from cv_builder_from_yaml_to_pdf.models import CV, PersonalInfo, Education, CompanyExperience, Role, Project, Skill # Updated import
 from cv_builder_from_yaml_to_pdf.styles import get_style
 
 
@@ -57,9 +57,9 @@ class CVPDFGenerator:
         self.doc = SimpleDocTemplate(
             str(self.output_path),
             pagesize=self.page_size,
-            rightMargin=2*cm,
+            rightMargin=1*cm, # Reduced right margin
             leftMargin=2*cm,
-            topMargin=2*cm,
+            topMargin=1*cm, # Reduced top margin
             bottomMargin=2*cm
         )
         
@@ -86,7 +86,7 @@ class CVPDFGenerator:
         # Add experience
         experience = self.data.experience
         if experience:
-            self._add_section('Work Experience', experience, self._format_job)
+            self._add_section('Work Experience', experience, self._format_company_experience) # Renamed formatter
         
         # Add education
         education = self.data.education
@@ -137,31 +137,38 @@ class CVPDFGenerator:
         
         for item in items:
             formatter(item)
-            self.elements.append(Spacer(1, 6))
+            self.elements.append(Spacer(1, 6)) # Add a bit more space after a full company entry
     
-    def _format_job(self, job: Experience):
-        """Format a job entry."""
-        # Job title and company
-        title_text = f"{job.title} at {job.company}"
-        self.elements.append(Paragraph(title_text, self.styles['ExperienceTitle']))
+    def _format_company_experience(self, company_exp: CompanyExperience):
+        """Format a company experience entry, including all its roles."""
+        # Company name and optional location
+        company_text = company_exp.company
+        if company_exp.location:
+            company_text += f" ({company_exp.location})"
+        self.elements.append(Paragraph(company_text, self.styles['ExperienceTitle'])) # Style for company name
         
-        # Dates and location
-        dates = f"{job.start_date} - {job.end_date or 'Present'}"
-        if job.location:
-            dates += f" | {job.location}"
-        self.elements.append(Paragraph(dates, self.styles['ExperienceDetails']))
-        
-        # Description
-        if job.description:
-            self.elements.append(Paragraph(job.description, self.styles['Normal']))
-        
-        # Achievements or bullet points
-        if job.achievements:
-            items = []
-            for achievement in job.achievements:
-                items.append(ListItem(Paragraph(achievement, self.styles['Normal'])))
-            self.elements.append(ListFlowable(items, bulletType='bullet', leftIndent=20))
-    
+        for role in company_exp.roles:
+            # Role title
+            self.elements.append(Paragraph(role.title, self.styles['RoleTitle'])) # Potentially a new style or reuse ExperienceDetails/Normal
+            
+            # Dates for the role
+            dates = f"{role.start_date} - {role.end_date or 'Present'}"
+            if role.location: # Role-specific location
+                dates += f" | {role.location}"
+            self.elements.append(Paragraph(dates, self.styles['ExperienceDetails']))
+            
+            # Description for the role
+            if role.description:
+                self.elements.append(Paragraph(role.description, self.styles['Normal']))
+            
+            # Achievements for the role
+            if role.achievements:
+                items = []
+                for achievement in role.achievements:
+                    items.append(ListItem(Paragraph(achievement, self.styles['Normal'])))
+                self.elements.append(ListFlowable(items, bulletType='bullet', leftIndent=20))
+            self.elements.append(Spacer(1, 4)) # Spacer between roles within the same company
+
     def _format_education(self, edu: Education):
         """Format an education entry."""
         # Degree and institution

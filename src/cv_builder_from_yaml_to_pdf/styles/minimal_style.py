@@ -59,6 +59,17 @@ class MinimalStyle(CVStyle):
             spaceAfter=1
         ))
         
+        # Role Title style
+        self.styles.add(ParagraphStyle(
+            name='RoleTitle',
+            parent=self.styles['Normal'],
+            fontSize=9, 
+            fontName='Helvetica-Bold', 
+            spaceBefore=2,
+            spaceAfter=1,
+            leftIndent=10 # Indent roles
+        ))
+        
         # Normal text style
         normal_style = self.styles['Normal']
         normal_style.fontSize = 9

@@ -7,7 +7,6 @@ import os
 import tempfile
 from pathlib import Path
 
-import pytest
 import yaml
 
 from cv_builder_from_yaml_to_pdf.yaml_parser import parse_yaml_file, validate_cv_data

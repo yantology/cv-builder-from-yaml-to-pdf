@@ -15,17 +15,19 @@ class ClassicStyle(CVStyle):
         self.styles.add(ParagraphStyle(
             name='Name',
             parent=self.styles['Heading1'],
-            fontSize=16,
-            spaceAfter=6
+            fontSize=18,  # Increased font size
+            spaceAfter=8, # Adjusted spacing
+            leading=22    # Added leading
         ))
         
         # Section headings
         self.styles.add(ParagraphStyle(
             name='SectionHeading',
             parent=self.styles['Heading2'],
-            fontSize=12,
-            spaceAfter=6,
-            fontName='Times-Bold'
+            fontSize=14,  # Increased font size
+            spaceAfter=8, # Adjusted spacing
+            fontName='Times-Bold',
+            leading=18    # Added leading
         ))
         
         # Contact info style
@@ -33,7 +35,8 @@ class ClassicStyle(CVStyle):
             name='ContactInfo',
             parent=self.styles['Normal'],
             fontSize=10,
-            spaceAfter=12
+            spaceAfter=14, # Adjusted spacing
+            leading=12     # Added leading
         ))
         
         # Experience title style
@@ -42,16 +45,31 @@ class ClassicStyle(CVStyle):
             parent=self.styles['Normal'],
             fontSize=11,
             fontName='Times-Bold',
-            spaceAfter=1
+            spaceAfter=2,  # Adjusted spacing
+            leading=14     # Added leading
         ))
         
+        # Role Title style (new)
+        self.styles.add(ParagraphStyle(
+            name='RoleTitle',
+            parent=self.styles['Normal'],
+            fontSize=10,
+            fontName='Times-Bold',
+            leftIndent=0, # Removed indent
+            spaceBefore=3, # Adjusted spacing
+            spaceAfter=2,  # Adjusted spacing
+            leading=12     # Added leading
+        ))
+
         # Experience details style
         self.styles.add(ParagraphStyle(
             name='ExperienceDetails',
             parent=self.styles['Normal'],
             fontSize=10,
             fontName='Times-Italic',
-            spaceAfter=1
+            leftIndent=0, # Ensure no indent
+            spaceAfter=2,  # Adjusted spacing
+            leading=12     # Added leading
         ))
         
         # Normal text style
@@ -59,3 +77,4 @@ class ClassicStyle(CVStyle):
         normal_style.fontSize = 10
         normal_style.spaceAfter = 6
         normal_style.fontName = 'Times-Roman'
+        normal_style.leading = 12 # Added leading

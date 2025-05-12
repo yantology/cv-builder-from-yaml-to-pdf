@@ -8,7 +8,7 @@ import sys
 import subprocess
 import platform
 from pathlib import Path
-from typing import Optional, List, Union
+from typing import Optional
 
 import click
 import yaml
@@ -105,6 +105,7 @@ def init_command(output_file: str, template: str = 'default'):
         click.echo("  - classic: Traditional CV style with serif fonts")
         click.echo("  - modern: Contemporary design with blue accents and sans-serif fonts")
         click.echo("  - minimal: Clean, minimalist design with subtle formatting")
+        click.echo("  - arial: Modern CV style with Arial font and clean lines")
         
         click.echo("\nExample usage:")
         click.echo(f"  cv-builder init my-cv.yaml --template academic")

@@ -1,4 +1,3 @@
-
 # filepath: c:\\Users\\LENOVO\\Documents\\python\\yaml-to-pdf\\cv-builder-from-yaml-to-pdf-2\\src\\cv_builder_from_yaml_to_pdf\\templates\\yaml_templates\\minimal.yaml
 personal_info:
   name: Jane Doe
@@ -17,23 +16,27 @@ education:
 
 experience:
   - company: Tech Solutions Inc.
-    title: Front-End Developer
-    start_date: "2020"
-    end_date: "Present"
-    location: "New York, NY"
-    achievements:
-      - "Developed responsive web interfaces for multiple client projects"
-      - "Collaborated with UX designers to implement user-friendly interfaces"
-      - "Optimized site performance, improving load times by 40%"
+    location: "New York, NY" # Company-level location
+    roles:
+      - title: Front-End Developer
+        start_date: "2020"
+        end_date: "Present"
+        # location: "New York, NY" # Role-specific location (optional)
+        achievements:
+          - "Developed responsive web interfaces for multiple client projects"
+          - "Collaborated with UX designers to implement user-friendly interfaces"
+          - "Optimized site performance, improving load times by 40%"
   
   - company: Digital Agency LLC
-    title: Junior Developer
-    start_date: "2018"
-    end_date: "2020"
-    location: "Boston, MA"
-    achievements:
-      - "Assisted in the development of client websites using HTML, CSS, and JavaScript"
-      - "Participated in code reviews and implemented feedback to improve code quality"
+    location: "Boston, MA" # Company-level location
+    roles:
+      - title: Junior Developer
+        start_date: "2018"
+        end_date: "2020"
+        # location: "Boston, MA" # Role-specific location (optional)
+        achievements:
+          - "Assisted in the development of client websites using HTML, CSS, and JavaScript"
+          - "Participated in code reviews and implemented feedback to improve code quality"
 
 skills:
   - category: Technical Skills

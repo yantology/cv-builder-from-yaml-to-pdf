@@ -1,4 +1,3 @@
-
 # filepath: c:\\Users\\LENOVO\\Documents\\python\\yaml-to-pdf\\cv-builder-from-yaml-to-pdf-2\\src\\cv_builder_from_yaml_to_pdf\\templates\\yaml_templates\\academic.yaml
 personal_info:
   name: Dr. Jane Doe
@@ -34,27 +33,31 @@ education:
 
 experience:
   - company: University of Technology
-    title: Assistant Professor
-    start_date: "Jul 2020"
-    end_date: "Present"
-    location: "Boston, MA"
-    description: "Teaching undergraduate and graduate courses in Artificial Intelligence and Machine Learning."
-    achievements:
-      - "Established a new research lab focused on deep learning applications"
-      - "Secured $500,000 in research grants from NSF and industry partners"
-      - "Mentored 5 Ph.D. students and 8 Master's students"
-      - "Developed a new graduate course on 'Advanced Deep Learning Techniques'"
+    location: "Boston, MA" # Company-level location
+    roles:
+      - title: Assistant Professor
+        start_date: "Jul 2020"
+        end_date: "Present"
+        # location: "Boston, MA" # Role-specific location (optional)
+        description: "Teaching undergraduate and graduate courses in Artificial Intelligence and Machine Learning."
+        achievements:
+          - "Established a new research lab focused on deep learning applications"
+          - "Secured $500,000 in research grants from NSF and industry partners"
+          - "Mentored 5 Ph.D. students and 8 Master's students"
+          - "Developed a new graduate course on 'Advanced Deep Learning Techniques'"
   
   - company: Tech Research Institute
-    title: Research Scientist
-    start_date: "Aug 2018"
-    end_date: "Jun 2020"
-    location: "San Francisco, CA"
-    description: "Led research projects on natural language processing applications."
-    achievements:
-      - "Published 4 papers in top-tier conferences (NeurIPS, ICML)"
-      - "Developed a novel transformer architecture for language understanding"
-      - "Collaborated with industry partners on applying research to real-world problems"
+    location: "San Francisco, CA" # Company-level location
+    roles:
+      - title: Research Scientist
+        start_date: "Aug 2018"
+        end_date: "Jun 2020"
+        # location: "San Francisco, CA" # Role-specific location (optional)
+        description: "Led research projects on natural language processing applications."
+        achievements:
+          - "Published 4 papers in top-tier conferences (NeurIPS, ICML)"
+          - "Developed a novel transformer architecture for language understanding"
+          - "Collaborated with industry partners on applying research to real-world problems"
 
 publications:
   - title: "Advances in Transformer Architectures for NLP"

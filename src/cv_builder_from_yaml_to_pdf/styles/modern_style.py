@@ -62,6 +62,18 @@ class ModernStyle(CVStyle):
             textColor=colors.darkgrey
         ))
         
+        # Role Title style
+        self.styles.add(ParagraphStyle(
+            name='RoleTitle',
+            parent=self.styles['Normal'],
+            fontSize=11, # Slightly smaller than ExperienceTitle
+            fontName='Helvetica-Bold', # Consistent with ExperienceTitle font
+            textColor=colors.darkblue, # Consistent with ExperienceTitle color
+            spaceBefore=2,
+            spaceAfter=1,
+            leftIndent=10 # Indent roles under company
+        ))
+        
         # Normal text style
         normal_style = self.styles['Normal']
         normal_style.fontSize = 10

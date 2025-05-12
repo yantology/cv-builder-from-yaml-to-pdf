@@ -6,7 +6,7 @@ from pathlib import Path
 import yaml
 from pydantic import ValidationError
 
-from cv_builder_from_yaml_to_pdf.yaml_parser import parse_yaml_file, validate_cv_data, validate_cv_string, validate_cv_dict
+from cv_builder_from_yaml_to_pdf.yaml_parser import parse_yaml_file, validate_cv_data, validate_cv_string
 from cv_builder_from_yaml_to_pdf.models import CV, PersonalInfo, Education, Experience, Skill
 
 
@@ -72,7 +72,7 @@ class TestPydanticModels(unittest.TestCase):
             ]
         }
         
-        result = validate_cv_dict(cv_dict)
+        result = validate_cv_data(cv_dict)
         self.assertTrue(result, "Valid CV dict should validate correctly")
     
     def test_invalid_cv_missing_required(self):
@@ -99,7 +99,7 @@ class TestPydanticModels(unittest.TestCase):
             ]
         }
         
-        result = validate_cv_dict(cv_dict)
+        result = validate_cv_data(cv_dict)
         self.assertIsInstance(result, list, "Invalid CV should return list of errors")
         self.assertTrue(any("email" in error for error in result), 
                        "Error should mention missing email field")
@@ -128,7 +128,7 @@ class TestPydanticModels(unittest.TestCase):
             ]
         }
         
-        result = validate_cv_dict(cv_dict)
+        result = validate_cv_data(cv_dict)
         self.assertIsInstance(result, list, "Invalid CV should return list of errors")
     
     def test_model_direct_instantiation(self):

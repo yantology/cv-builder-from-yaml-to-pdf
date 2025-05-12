@@ -100,6 +100,7 @@ This tool uses Pydantic for data validation, ensuring that your CV data follows 
 ### Schema Enforcement
 
 The schema enforces:
+
 - Required fields (e.g., name, email in personal info)
 - Data types (e.g., dates as strings, achievements as lists)
 - Structural validation (e.g., personal_info, education, and experience sections are required)
@@ -132,6 +133,7 @@ The YAML file should contain the following sections:
 - `projects`: A list of projects (optional)
 
 Additional sections for academic CVs:
+
 - `publications`: A list of academic publications
 - `teaching`: Teaching experience
 - `grants_and_awards`: Grants and awards received
@@ -145,22 +147,6 @@ The CV Builder provides multiple templates for different types of CVs:
 - `default`: Standard professional CV for software engineers and other tech roles
 - `academic`: Academic CV with focus on publications, teaching experience, and research
 - `minimal`: Simplified CV format with essential sections only
-
-## Development
-
-This project uses Poetry for dependency management. To set up a development environment:
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/cv-builder-from-yaml-to-pdf.git
-cd cv-builder-from-yaml-to-pdf
-
-# Install dependencies
-poetry install
-
-# Run the application
-poetry run cv-builder --help
-```
 
 ## License
 

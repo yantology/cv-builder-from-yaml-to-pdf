@@ -28,27 +28,37 @@ education:
 
 experience:
   - company: Tech Innovations Inc.
-    title: Senior Software Engineer
-    start_date: "Jul 2019"
-    end_date: "Present"
     location: "New York, NY"
-    description: "Leading a team of 5 engineers in developing and maintaining enterprise web applications."
-    achievements:
-      - "Redesigned authentication system, reducing login failures by 35%"
-      - "Optimized database queries, improving application performance by 40%"
-      - "Implemented CI/CD pipeline, reducing deployment time from 2 hours to 15 minutes"
-      - "Mentored 3 junior developers, helping them advance to mid-level positions"
+    roles:
+      - title: Senior Software Engineer
+        start_date: "Jul 2019"
+        end_date: "Present"
+        description: "Leading a team of 5 engineers in developing and maintaining enterprise web applications."
+        achievements:
+          - "Redesigned authentication system, reducing login failures by 35%"
+          - "Optimized database queries, improving application performance by 40%"
+          - "Implemented CI/CD pipeline, reducing deployment time from 2 hours to 15 minutes"
+          - "Mentored 3 junior developers, helping them advance to mid-level positions"
+      - title: Software Engineer
+        start_date: "Jan 2018"
+        end_date: "Jun 2019"
+        description: "Contributed to the development of core features for enterprise web applications."
+        achievements:
+          - "Developed and shipped 3 major features"
+          - "Collaborated with senior engineers on system design"
+          - "Participated in code reviews and improved code quality"
 
   - company: Web Solutions LLC
-    title: Software Developer
-    start_date: "Aug 2017"
-    end_date: "Jun 2019"
     location: "Chicago, IL"
-    description: "Developed and maintained multiple client-facing web applications."
-    achievements:
-      - "Built responsive web interfaces using React and Vue.js"
-      - "Developed RESTful APIs using Node.js and Express"
-      - "Implemented automated testing, increasing code coverage from 60% to 85%"
+    roles:
+      - title: Software Developer
+        start_date: "Aug 2017"
+        end_date: "Jun 2019"
+        description: "Developed and maintained multiple client-facing web applications."
+        achievements:
+          - "Built responsive web interfaces using React and Vue.js"
+          - "Developed RESTful APIs using Node.js and Express"
+          - "Implemented automated testing, increasing code coverage from 60% to 85%"
 
 skills:
   - category: "Programming Languages"
