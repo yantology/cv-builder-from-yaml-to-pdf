@@ -37,25 +37,6 @@ def parse_yaml_file(file_path: str) -> Dict[str, Any]:
         raise yaml.YAMLError(f"Error parsing YAML file: {e}")
 
 
-def validate_cv_string(yaml_string: str) -> Union[bool, List[str]]:
-    """Validates a CV from a YAML string.
-    
-    Args:
-        yaml_string: YAML string containing CV data
-        
-    Returns:
-        True if valid, or a list of validation errors
-    """
-    try:
-        # Parse the YAML string
-        data = yaml.safe_load(yaml_string)
-        
-        # Validate the data
-        return validate_cv_data(data)
-    except yaml.YAMLError as e:
-        return [f"YAML parsing error: {e}"]
-
-
 def validate_cv_data(data: Dict[str, Any]) -> Union[bool, List[str]]:
     """Validates that the CV data is properly structured using Pydantic models.
     

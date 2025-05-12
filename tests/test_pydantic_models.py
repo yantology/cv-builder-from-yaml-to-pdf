@@ -6,7 +6,7 @@ from pathlib import Path
 import yaml
 from pydantic import ValidationError
 
-from cv_builder_from_yaml_to_pdf.yaml_parser import parse_yaml_file, validate_cv_data, validate_cv_string
+from cv_builder_from_yaml_to_pdf.yaml_parser import parse_yaml_file, validate_cv_data
 from cv_builder_from_yaml_to_pdf.models import CV, PersonalInfo, Education, Experience, Skill
 
 
@@ -46,7 +46,10 @@ class TestPydanticModels(unittest.TestCase):
             start_date: "2021"
         """
         
-        result = validate_cv_string(yaml_string)
+        # Parse the YAML string manually
+        data = yaml.safe_load(yaml_string)
+        # Then validate the parsed data
+        result = validate_cv_data(data)
         self.assertTrue(result, "Valid CV string should validate correctly")
     
     def test_valid_cv_from_dict(self):
