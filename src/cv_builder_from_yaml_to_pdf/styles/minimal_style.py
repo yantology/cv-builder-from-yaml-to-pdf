@@ -74,3 +74,14 @@ class MinimalStyle(CVStyle):
         normal_style = self.styles['Normal']
         normal_style.fontSize = 9
         normal_style.spaceAfter = 6
+
+        # Paragraph style (similar to Normal)
+        self.styles.add(ParagraphStyle(
+            name='Paragraph',
+            parent=self.styles['Normal'],
+            fontSize=10,
+            spaceAfter=6,
+            fontName='Times-Roman',
+            leading=12,
+            firstLineIndent=15
+        ))

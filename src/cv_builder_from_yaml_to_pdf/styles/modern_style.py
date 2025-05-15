@@ -73,8 +73,30 @@ class ModernStyle(CVStyle):
             spaceAfter=1,
             leftIndent=10 # Indent roles under company
         ))
+
+                # Paragraph style (similar to Normal)
+        self.styles.add(ParagraphStyle(
+            name='Paragraph',
+            parent=self.styles['Normal'],
+            fontSize=10,
+            spaceAfter=6,
+            fontName='Times-Roman',
+            leading=12,
+            firstLineIndent=15
+        ))
         
         # Normal text style
         normal_style = self.styles['Normal']
         normal_style.fontSize = 10
         normal_style.spaceAfter = 6
+
+        # Paragraph style (similar to Normal)
+        self.styles.add(ParagraphStyle(
+            name='Paragraph',
+            parent=self.styles['Normal'],
+            fontSize=10,
+            spaceAfter=6,
+            fontName='Times-Roman',
+            leading=12,
+            firstLineIndent=15
+        ))

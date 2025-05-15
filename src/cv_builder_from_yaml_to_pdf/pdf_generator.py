@@ -109,6 +109,10 @@ class CVPDFGenerator:
         if personal_info.name:
             self.elements.append(Paragraph(personal_info.name, self.styles['Name']))
         
+        # Add title if present
+        if personal_info.title:
+            self.elements.append(Paragraph(personal_info.title, self.styles['ContactInfo']))
+        
         # Combine contact information
         contact_parts = []
         if personal_info.email:
@@ -133,7 +137,7 @@ class CVPDFGenerator:
             for line in summary_lines:
                 if line.strip(): # Add non-empty lines as paragraphs
                     indented_line = f"{line.lstrip()}" # Add 4 dashes to the start of the line
-                    self.elements.append(Paragraph(indented_line, self.styles['Normal']))
+                    self.elements.append(Paragraph(indented_line, self.styles['Paragraph']))
             self.elements.append(Spacer(1, 12))
     
     def _add_section(self, title, items, formatter):

@@ -5,6 +5,7 @@ personal_info:
   phone: "+1 (123) 456-7890"
   location: "Cambridge, MA"
   website: "https://janedoe.academia.edu"
+  title: "Assistant Professor of Computer Science"
   orcid: "0000-0001-2345-6789"
   researchgate: "https://www.researchgate.net/profile/Jane-Doe"
   summary: "Assistant Professor of Computer Science with expertise in Artificial Intelligence and Machine Learning. Published over 15 peer-reviewed papers focusing on neural networks and deep learning applications."
