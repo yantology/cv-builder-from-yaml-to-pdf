@@ -17,6 +17,7 @@ from cv_builder_from_yaml_to_pdf.yaml_parser import parse_yaml_file, validate_cv
 from cv_builder_from_yaml_to_pdf.pdf_generator import generate_cv_pdf
 from cv_builder_from_yaml_to_pdf.templates import create_yaml_from_template
 from cv_builder_from_yaml_to_pdf.schema import save_schema_to_file, generate_schema_markdown
+from cv_builder_from_yaml_to_pdf.models import CV
 
 
 @click.group()
@@ -44,17 +45,14 @@ def generate_command(yaml_file: str, output: Optional[str] = None, style: str = 
         # Parse the YAML file
         cv_data_dict = parse_yaml_file(yaml_file)
         
-        # Validate the CV data
-        validation_result = validate_cv_data(cv_data_dict)
-        if validation_result is not True:
+        # Validate the CV data and get the CV object
+        cv_data = validate_cv_data(cv_data_dict)
+        if isinstance(cv_data, list):
             click.echo("Error: The YAML file contains validation errors:", err=True)
-            for error in validation_result:
+            for error in cv_data:
                 click.echo(f"  - {error}", err=True)
             sys.exit(1)
-        
-        # Convert the dictionary to a CV object
-        from cv_builder_from_yaml_to_pdf.models import CV
-        cv_data = CV.model_validate(cv_data_dict)
+
         
         # If output is not specified, use the same name as the input file but with .pdf extension
         if not output:
@@ -144,17 +142,18 @@ def validate_command(yaml_file: str):
     """
     try:
         # Parse the YAML file
-        cv_data = parse_yaml_file(yaml_file)
+        cv_data_dict = parse_yaml_file(yaml_file)
         
         # Validate the CV data
-        validation_result = validate_cv_data(cv_data)
-        if validation_result is True:
+        validation_result = validate_cv_data(cv_data_dict)
+        if isinstance(validation_result, CV):
             click.echo(click.style("✓ Valid CV file - your CV data structure is correct.", fg='green'))
-        else:
+        else: # It's a list of errors
             click.echo(click.style("✗ Invalid CV file - the following errors were found:", fg='red'))
             for error in validation_result:
-                click.echo(click.style(f"  - {error}", fg='red'))
+                click.echo(f"  - {error}", err=True)
             sys.exit(1)
+
     except (FileNotFoundError, yaml.YAMLError) as e:
         click.echo(f"Error: {e}", err=True)
         sys.exit(1)

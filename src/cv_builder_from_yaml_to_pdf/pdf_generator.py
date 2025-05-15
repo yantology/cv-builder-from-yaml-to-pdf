@@ -128,7 +128,12 @@ class CVPDFGenerator:
         # Add summary if present
         if personal_info.summary:
             self.elements.append(Paragraph('Summary', self.styles['SectionHeading']))
-            self.elements.append(Paragraph(personal_info.summary, self.styles['Normal']))
+            # Split summary into paragraphs if it contains newlines
+            summary_lines = personal_info.summary.split('\n')
+            for line in summary_lines:
+                if line.strip(): # Add non-empty lines as paragraphs
+                    indented_line = f"{line.lstrip()}" # Add 4 dashes to the start of the line
+                    self.elements.append(Paragraph(indented_line, self.styles['Normal']))
             self.elements.append(Spacer(1, 12))
     
     def _add_section(self, title, items, formatter):
@@ -166,7 +171,7 @@ class CVPDFGenerator:
                 items = []
                 for achievement in role.achievements:
                     items.append(ListItem(Paragraph(achievement, self.styles['Normal'])))
-                self.elements.append(ListFlowable(items, bulletType='bullet', leftIndent=20))
+                self.elements.append(ListFlowable(items, bulletType='bullet', leftIndent=0.5*cm, bulletFontName='Helvetica-Bold', bulletFontSize=10))
             self.elements.append(Spacer(1, 4)) # Spacer between roles within the same company
 
     def _format_education(self, edu: Education):

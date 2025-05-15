@@ -153,15 +153,23 @@ class TestPydanticModels(unittest.TestCase):
             )
         ]
         
-        # Create experience entries
+        # Create experience entries 
+        # We need to use CompanyExperience with Role instead of Experience directly
+        from cv_builder_from_yaml_to_pdf.models import CompanyExperience, Role
+        
         experience = [
-            Experience(
+            CompanyExperience(
                 company="Tech Company",
-                title="Software Engineer",
-                start_date="2019-08",
-                end_date="Present",
-                description="Working on web applications",
-                achievements=["Developed feature X", "Improved performance by 30%"]
+                location="San Francisco, CA",
+                roles=[
+                    Role(
+                        title="Software Engineer",
+                        start_date="2019-08",
+                        end_date="Present",
+                        description="Working on web applications",
+                        achievements=["Developed feature X", "Improved performance by 30%"]
+                    )
+                ]
             )
         ]
         

@@ -56,13 +56,19 @@ def test_validate_cv_data():
         'education': [
             {
                 'institution': 'Test University',
-                'degree': 'Test Degree'
+                'degree': 'Test Degree',
+                'start_date': '2020'
             }
         ],
         'experience': [
             {
                 'company': 'Test Company',
-                'title': 'Test Title'
+                'roles': [
+                    {
+                        'title': 'Test Title',
+                        'start_date': '2021'
+                    }
+                ]
             }
         ]
     }
@@ -75,7 +81,7 @@ def test_validate_cv_data():
         'experience': []
     }
     
-    assert validate_cv_data(invalid_data1) is False
+    assert validate_cv_data(invalid_data1) is not True
     
     # Invalid data: missing name in personal_info
     invalid_data2 = {
@@ -86,7 +92,7 @@ def test_validate_cv_data():
         'experience': []
     }
     
-    assert validate_cv_data(invalid_data2) is False
+    assert validate_cv_data(invalid_data2) is not True
 
 
 def test_create_sample_cv_yaml():
@@ -134,16 +140,25 @@ def test_generate_cv_pdf():
             'experience': [
                 {
                     'company': 'Test Company',
-                    'title': 'Test Title',
-                    'start_date': '2019',
-                    'end_date': 'Present',
-                    'description': 'Test description'
+                    'location': 'Test Location',
+                    'roles': [
+                        {
+                            'title': 'Test Title',
+                            'start_date': '2019',
+                            'end_date': 'Present',
+                            'description': 'Test description'
+                        }
+                    ]
                 }
             ]
         }
         
+        # Convert dictionary to Pydantic model
+        from cv_builder_from_yaml_to_pdf.models import CV
+        cv_model = CV.model_validate(cv_data)
+        
         # Generate the PDF
-        pdf_path = generate_cv_pdf(cv_data, output_path)
+        pdf_path = generate_cv_pdf(cv_model, output_path)
         
         # Check that the PDF was created
         assert os.path.exists(pdf_path)

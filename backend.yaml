@@ -1,12 +1,15 @@
 personal_info:
-  name: Jane Doe
-  email: jane.doe@example.com
-  phone: "+1 (123) 456-7890"
-  location: "New York, NY"
-  website: "https://janedoe.com"
-  linkedin: "https://linkedin.com/in/janedoe"
-  github: "https://github.com/janedoe"
-  summary: "Experienced software engineer with 6+ years of experience in full-stack development. Passionate about creating efficient, scalable solutions using modern technologies."
+  name: Muhamad Wijayanto
+  email: work@yantology.dev
+  phone: "+62 85 804 155 315"
+  location: "East Java"
+  website: "https://www.yantology.dev"
+  linkedin: "https://linkedin.com/in/muhamad-wijayanto"
+  github: "https://github.com/yantology"
+  summary: >
+    Experienced software engineer with 6+ years of experience in full-stack development.Passionate about creating efficient, scalable solutions using modern technologies.Passionate about creating efficient, scalable solutions using modern technologies. 
+    
+    Passionate about creating efficient, scalable solutions using modern technologies.Passionate about creating efficient, scalable solutions using modern technologies.Passionate about creating efficient, scalable solutions using modern technologies.
   title: "Senior Software Engineer"
 
 education:

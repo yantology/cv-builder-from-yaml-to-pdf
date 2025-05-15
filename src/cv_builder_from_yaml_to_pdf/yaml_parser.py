@@ -37,17 +37,17 @@ def parse_yaml_file(file_path: str) -> Dict[str, Any]:
         raise yaml.YAMLError(f"Error parsing YAML file: {e}")
 
 
-def validate_cv_data(data: Dict[str, Any]) -> Union[bool, List[str]]:
+def validate_cv_data(data: Dict[str, Any]) -> Union[CV, List[str]]:
     """Validates that the CV data is properly structured using Pydantic models.
     
     Args:
         data: Dictionary containing CV data
         
     Returns:
-        True if data is valid, or a list of validation errors if invalid
+        CV object if data is valid, or a list of validation errors if invalid
     """
     try:
         cv = CV.model_validate(data)
-        return True
+        return cv
     except ValidationError as e:
         return [f"{err['loc']}: {err['msg']}" for err in e.errors()]

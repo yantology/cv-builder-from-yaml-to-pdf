@@ -32,6 +32,17 @@ class Education(BaseModel):
     gpa: Optional[str] = Field(default=None, description="Grade Point Average (e.g., 3.8/4.0).")
 
 
+class Experience(BaseModel):
+    """Model for professional experience for backwards compatibility with tests."""
+    company: str = Field(description="Name of the company or organization.")
+    title: str = Field(description="Job title or position held.")
+    start_date: str = Field(description="Start date of this role (e.g., YYYY-MM or Jun 2020).")
+    end_date: Optional[str] = Field(default=None, description="End date of this role (e.g., YYYY-MM, Aug 2022, or 'Present').")
+    description: Optional[str] = Field(default=None, description="A brief overview of responsibilities and the role.")
+    achievements: Optional[List[str]] = Field(default=None, description="List of key achievements or accomplishments for this role.")
+    location: Optional[str] = Field(default=None, description="Location where this role was performed.")
+
+
 class Role(BaseModel):
     """Model for a specific role within a company."""
     title: str = Field(description="Job title or position held.")
